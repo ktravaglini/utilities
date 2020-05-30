@@ -23,6 +23,7 @@ reference_genomes = {
     "homo": "HG38-PLUS",
     "hg38-plus": "HG38-PLUS",
     "homo.gencode.v30.ERCC.chrM": "homo.gencode.v30.annotation.ERCC92",
+    "homo.gencode.v30.ERCC.chrM.sars.cov2.wa1": "homo.gencode.v30.annotation.ERCC92_and_sars.cov2.wa1",
     "mus": "MM10-PLUS",
     "mm10-plus": "MM10-PLUS",
     "mm10-1.2.0": "mm10-1.2.0",

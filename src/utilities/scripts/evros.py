@@ -9,7 +9,7 @@ import subprocess
 import utilities.log_util as ut_log
 
 
-REPO_ADDRESS = "https://github.com/czbiohub/utilities.git"
+REPO_ADDRESS = "https://github.com/ktravaglini/utilities.git"
 
 
 # helper function to check arguments are within a given range
@@ -34,7 +34,7 @@ def main():
             "Run batch jobs on AWS\n"
             "e.g. evros [options] demux.bcl2fastq [script args...]"
         ),
-        epilog="See https://github.com/czbiohub/utilities for more examples",
+        epilog="See https://github.com/ktravaglini/utilities for more examples",
         add_help=False,
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
