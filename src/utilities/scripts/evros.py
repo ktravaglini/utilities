@@ -149,8 +149,8 @@ def main():
     job_command = "; ".join(
         (
             "PATH=$HOME/anaconda/bin:$PATH",
-            "rm -fr utilities"
-            "git clone https://github.com/ktravaglini/utilities.git"
+            "rm -fr utilities",
+            "git clone https://github.com/ktravaglini/utilities.git",
             "cd utilities",
             "python setup.py install",
             f"python -m utilities.{args.script_name} {' '.join(args.script_args)}",
