@@ -55,6 +55,9 @@ def get_parser():
     parser.add_argument(
         "--taxon", required=True, choices=list(reference_genomes.keys())
     )
+
+    parser.add_argument("--sample_prefix", required=True)
+
     parser.add_argument("--cell_count", type=int, default=3000)
 
     parser.add_argument("--dobby", action="store_true",
@@ -144,6 +147,10 @@ def main(logger):
         "cp",
         "--no-progress",
         "--recursive",
+        "--exclude",
+        "'*'",
+        "--include",
+        f"'{args.sample_prefix}*'",
         "--force-glacier-transfer" if args.glacier else "",
         args.s3_input_dir,
         f"{fastq_path}",
@@ -191,7 +198,7 @@ def main(logger):
         "sync",
         "--no-progress",
         os.path.join(result_path, sample_id, "outs"),
-        args.s3_output_dir,
+        os.path.join(args.s3_output_dir,args.sample_prefix),
     ]
     for i in range(S3_RETRY):
         if not log_command(logger, command, shell=True):
